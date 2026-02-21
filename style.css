@@ -1,0 +1,306 @@
+/* ================= GLOBAL ================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', sans-serif;
+    background: #0f0f0f;
+    color: #ffffff;
+    scroll-behavior: smooth;
+    line-height: 1.6;
+}
+
+/* ================= NAVBAR ================= */
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 18px 60px;
+    background: rgba(0, 0, 0, 0.85);
+    backdrop-filter: blur(10px);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    transition: 0.3s ease;
+}
+
+nav.shrink {
+    padding: 12px 60px;
+    background: rgba(0, 0, 0, 0.95);
+}
+
+nav h2 {
+    color: #00adb5;
+}
+
+nav a {
+    margin-left: 25px;
+    color: #ffffff;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+nav a:hover,
+nav a.active {
+    color: #00adb5;
+    font-weight: bold;
+}
+
+/* ================= HERO ================= */
+.hero {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(-45deg, #1f1f1f, #292929, #002f34, #001f22);
+    background-size: 400% 400%;
+    animation: gradientBG 10s ease infinite;
+    text-align: center;
+    padding: 20px;
+}
+
+@keyframes gradientBG {
+    0% {background-position: 0% 50%;}
+    50% {background-position: 100% 50%;}
+    100% {background-position: 0% 50%;}
+}
+
+.hero h1 {
+    font-size: 48px;
+    margin-bottom: 15px;
+    min-height: 60px;
+    text-shadow: 0 0 20px rgba(0, 173, 181, 0.4);
+}
+
+.subtitle {
+    color: #cccccc;
+    opacity: 0;
+    animation: fadeIn 2s ease forwards;
+    animation-delay: 1.5s;
+}
+
+@keyframes fadeIn {
+    to { opacity: 1; }
+}
+
+/* ================= BUTTON ================= */
+.btn {
+    display: inline-block;
+    margin: 15px 10px;
+    padding: 12px 25px;
+    background: #00adb5;
+    border-radius: 30px;
+    color: white;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.btn:hover {
+    background: white;
+    color: #00adb5;
+    transform: translateY(-4px);
+}
+
+/* ================= SOCIAL ================= */
+.socials {
+    margin-top: 25px;
+}
+
+.socials a {
+    display: inline-block;
+    margin: 0 15px;
+    font-size: 28px;
+    color: #cccccc;
+    transition: 0.3s;
+}
+
+.socials a:hover {
+    color: #00adb5;
+    transform: translateY(-6px) scale(1.1);
+    text-shadow: 0 0 15px #00adb5;
+}
+
+/* ================= SECTIONS ================= */
+.section {
+    padding: 120px 20px;
+    max-width: 1100px;
+    margin: auto;
+}
+
+.section h2 {
+    text-align: center;
+    margin-bottom: 50px;
+    font-size: 32px;
+    color: #00adb5;
+}
+
+/* ================= SCROLL FADE ================= */
+.fade {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.fade.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* ================= SKILLS ================= */
+.skills {
+    text-align: center;
+}
+
+.skills span {
+    display: inline-block;
+    background: #1f1f1f;
+    padding: 12px 20px;
+    margin: 10px;
+    border-radius: 25px;
+    transition: 0.3s;
+}
+
+.skills span:hover {
+    background: #00adb5;
+    transform: translateY(-5px);
+}
+
+/* ================= GENERAL CARDS ================= */
+.cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.card {
+    background: rgba(28, 28, 28, 0.85);
+    backdrop-filter: blur(10px);
+    padding: 30px;
+    border-radius: 15px;
+    transition: 0.4s ease;
+    border: 1px solid rgba(0, 173, 181, 0.15);
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 50px rgba(0, 173, 181, 0.3);
+}
+
+/* ================= CERTIFICATIONS ================= */
+#certifications {
+    background: linear-gradient(180deg, #0f0f0f, #141414);
+}
+
+#certifications .card {
+    min-height: 260px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.cert-btn {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 10px 20px;
+    border-radius: 25px;
+    border: 2px solid #00adb5;
+    color: #00adb5;
+    text-decoration: none;
+    font-size: 14px;
+    transition: 0.3s ease;
+}
+
+.cert-btn:hover {
+    background: #00adb5;
+    color: white;
+    transform: translateY(-4px);
+    box-shadow: 0 10px 25px rgba(0, 173, 181, 0.4);
+}
+
+/* ================= EXPERIENCE ================= */
+#experience {
+    padding: 100px 10%;
+}
+
+.experience-card {
+    background: rgba(26, 26, 26, 0.85);
+    backdrop-filter: blur(10px);
+    padding: 30px;
+    border-radius: 12px;
+    border-left: 4px solid #00adb5;
+    transition: 0.4s;
+}
+
+.experience-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 40px rgba(0, 173, 181, 0.3);
+}
+
+/* ================= CONTACT ================= */
+.contact-form {
+    max-width: 600px;
+    margin: auto;
+}
+
+.input-group {
+    position: relative;
+    margin-bottom: 30px;
+}
+
+.input-group input,
+.input-group textarea {
+    width: 100%;
+    padding: 15px;
+    background: #1f1f1f;
+    border: 2px solid #333;
+    border-radius: 10px;
+    color: white;
+    outline: none;
+}
+
+.input-group input:focus,
+.input-group textarea:focus {
+    border-color: #00adb5;
+}
+
+/* ================= FOOTER ================= */
+footer {
+    text-align: center;
+    padding: 20px;
+    background: #111;
+    margin-top: 40px;
+    color: #aaa;
+}
+
+/* ================= RESPONSIVE ================= */
+@media (max-width: 768px) {
+
+    nav {
+        flex-direction: column;
+        padding: 15px;
+    }
+
+    .hero h1 {
+        font-size: 32px;
+    }
+
+    .section {
+        padding: 80px 20px;
+    }
+}
+
+/* ================= CURSOR ================= */
+.cursor {
+    animation: blink 1s infinite;
+    color: #00adb5;
+}
+
+@keyframes blink {
+    0%, 50%, 100% { opacity: 1; }
+    25%, 75% { opacity: 0; }
+}
