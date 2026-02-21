@@ -96,23 +96,33 @@
         </div>
         
         <div class="card">
-            <h3>Sales Performance Dashboard</h3>
-            <p>Interactive Tableau dashboard for KPI monitoring and sales trend insights.</p>
-            <a href="#" class="cert-btn">View Dashboard</a>
-        </div>
+    <h3>Sales Performance Dashboard</h3>
+    <p>Interactive Tableau dashboard for KPI monitoring and sales trend insights.</p>
+    <a href="https://public.tableau.com/app/profile/dhiraj.khalas/viz/TableaublinkitprojectU/SalesPerformanceDashboard" 
+       target="_blank" class="cert-btn">
+        View Dashboard
+    </a>
+</div>
 
         <!-- NEW ML PROJECT -->
         <div class="card">
-            <h3>Bank Customer Churn Prediction (Machine Learning)</h3>
-            <p>
-                Built an end-to-end Machine Learning model to predict customer churn 
-                using Python, SQL and Tableau. Implemented Logistic Regression and 
-                Random Forest achieving high prediction accuracy.
-            </p>
-            <a href="https://github.com/dhiraj879/Bank-Customer-Analysis.git" target="_blank" class="cert-btn">
-                View Project
-            </a>
-        </div>
+    <h3>Bank Customer Churn Prediction (Machine Learning)</h3>
+    <p>
+        Built an end-to-end Machine Learning model to predict customer churn 
+        using Python, SQL and Tableau. Implemented Logistic Regression and 
+        Random Forest achieving high prediction accuracy.
+    </p>
+
+    <a href="https://github.com/dhiraj879/Bank-Customer-Analysis.git" 
+       target="_blank" class="cert-btn">
+        View Code
+    </a>
+
+    <a href="https://public.tableau.com/views/bank_customerdhirajkhalas/Bank_CustomerAccountDashbord" 
+       target="_blank" class="cert-btn live-btn">
+        Live Dashboard
+    </a>
+</div>
 
     </div>
 </section>
@@ -187,21 +197,28 @@
 <section id="contact" class="section fade">
     <h2>Contact Me</h2>
 
-    <form class="contact-form">
-        <div class="input-group">
-            <input type="text" required placeholder="Full Name">
-        </div>
+    <div class="contact-container">
+        <form id="contactForm" class="contact-form">
 
-        <div class="input-group">
-            <input type="email" required placeholder="Email Address">
-        </div>
+            <div class="input-group">
+                <input type="text" name="user_name" required>
+                <label>Full Name</label>
+            </div>
 
-        <div class="input-group">
-            <textarea rows="5" required placeholder="Your Message"></textarea>
-        </div>
+            <div class="input-group">
+                <input type="email" name="user_email" required>
+                <label>Email Address</label>
+            </div>
 
-        <button type="submit" class="btn">Send Message</button>
-    </form>
+            <div class="input-group">
+                <textarea name="message" rows="5" required></textarea>
+                <label>Your Message</label>
+            </div>
+
+            <button type="submit" class="btn">Send Message</button>
+
+        </form>
+    </div>
 </section>
 
 <!-- ===== FOOTER ===== -->
@@ -211,4 +228,28 @@
 
 <script src="script.js"></script>
 </body>
+<script type="text/javascript" src="https://cdn.emailjs.com/dist/email.min.js"></script>
+<script type="text/javascript">
+    (function(){
+        emailjs.init("cyjOk-PcYH9JHDcOK"); // your public key
+    })();
+
+    const form = document.getElementById("contactForm");
+
+    form.addEventListener("submit", function(e){
+        e.preventDefault();
+        const btn = form.querySelector(".btn");
+        btn.textContent = "Sending...";
+
+        emailjs.sendForm('service_cvy2iil', 'template_q4zjssi', this)
+        .then(() => {
+            btn.textContent = "Send Message";
+            alert("Message Sent Successfully 🚀");
+            form.reset();
+        }, (error) => {
+            btn.textContent = "Send Message";
+            alert("Oops! Something went wrong...\n" + JSON.stringify(error));
+        });
+    });
+</script>
 </html>
