@@ -1,21 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
-    <title>Dhiraj Khalas | Data Analyst Portfolio</title>
+    <title>Dhiraj Khalas | Data Analyst & Web Developer</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Dhiraj Khalas - Aspiring Data Analyst skilled in Python, SQL, Tableau and Machine Learning.">
+
+    <meta name="description"
+        content="Dhiraj Khalas - Data Analyst & Web Developer skilled in Python, SQL, Tableau, Machine Learning, PHP and MySQL.">
+    <meta name="keywords"
+        content="Dhiraj Khalas, Data Analyst, Web Developer, Python, SQL, Tableau, PHP, MySQL, Portfolio">
     <meta name="author" content="Dhiraj Khalas">
 
+    <!-- CSS -->
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 
 <body>
 
-<!-- ===== NAVBAR ===== -->
+<!-- ================= NAVBAR ================= -->
 <nav>
-    <h2>Dhiraj</h2>
+    <h2 class="logo">Dhiraj</h2>
+
+    <i class="fas fa-bars menu-toggle"></i>
+
     <div class="nav-links">
         <a href="#about">About</a>
         <a href="#skills">Skills</a>
@@ -27,12 +39,12 @@
     </div>
 </nav>
 
-<!-- ===== HERO ===== -->
+<!-- ================= HERO ================= -->
 <header class="hero">
     <h1 class="typing"></h1>
 
     <p class="subtitle">
-        Aspiring Data Analyst | Python | SQL | Tableau | Machine Learning
+        Data Analyst | Web Developer | Python | SQL | Tableau | PHP
     </p>
 
     <div class="hero-buttons">
@@ -41,31 +53,33 @@
     </div>
 
     <div class="socials">
-        <a href="https://github.com/dhiraj879" target="_blank">
+        <a href="https://github.com/dhiraj879"
+            target="_blank" rel="noopener noreferrer">
             <i class="fab fa-github"></i>
         </a>
 
-        <a href="https://www.linkedin.com/in/dhiraj-khalas-528446236" target="_blank">
+        <a href="https://www.linkedin.com/in/dhiraj-khalas-528446236"
+            target="_blank" rel="noopener noreferrer">
             <i class="fab fa-linkedin"></i>
         </a>
     </div>
-
-    <div class="scroll-down"></div>
 </header>
 
-<!-- ===== ABOUT ===== -->
+<!-- ================= ABOUT ================= -->
 <section id="about" class="section fade">
     <h2>About Me</h2>
     <p>
-        I am an aspiring Data Analyst passionate about transforming raw data into meaningful insights.
-        Skilled in Python, SQL, Excel, and Tableau for data cleaning, exploratory data analysis,
-        and dashboard development.
+        I am a passionate Data Analyst and Web Developer focused on transforming
+        raw data into meaningful insights and building scalable web applications.
+        Experienced in Python, SQL, Tableau, PHP, and MySQL with strong analytical
+        and problem-solving skills.
     </p>
 </section>
 
-<!-- ===== SKILLS ===== -->
+<!-- ================= SKILLS ================= -->
 <section id="skills" class="section fade">
-    <h2>Skills</h2>
+    <h2>Technical Skills</h2>
+
     <div class="skills">
         <span>Python</span>
         <span>SQL</span>
@@ -73,65 +87,85 @@
         <span>Excel</span>
         <span>Tableau</span>
         <span>Machine Learning</span>
-        <span>Data Cleaning</span>
-        <span>EDA</span>
+        <span>HTML</span>
+        <span>CSS</span>
+        <span>JavaScript</span>
+        <span>PHP</span>
     </div>
 </section>
 
-<!-- ===== PROJECTS ===== -->
+<!-- ================= PROJECTS ================= -->
 <section id="projects" class="section fade">
     <h2>Projects</h2>
+
     <div class="cards">
 
         <div class="card">
             <h3>Student Management System</h3>
-            <p>Designed MySQL database and optimized queries for academic performance tracking.</p>
-            <a href="#" class="cert-btn">View Details</a>
+            <p>
+                Designed relational database system using MySQL for
+                academic tracking with optimized SQL queries.
+            </p>
         </div>
 
         <div class="card">
             <h3>Crime Data Analysis</h3>
-            <p>Performed data cleaning, EDA and visualization using Python (Pandas, Matplotlib).</p>
-            <a href="#" class="cert-btn">View Details</a>
+            <p>
+                Conducted EDA using Python (Pandas & Matplotlib)
+                to identify crime trends and patterns.
+            </p>
         </div>
-        
+
         <div class="card">
-    <h3>Sales Performance Dashboard</h3>
-    <p>Interactive Tableau dashboard for KPI monitoring and sales trend insights.</p>
-    <a href="https://public.tableau.com/app/profile/dhiraj.khalas/viz/TableaublinkitprojectU/SalesPerformanceDashboard" 
-       target="_blank" class="cert-btn">
-        View Dashboard
-    </a>
-</div>
+            <h3>Sales Performance Dashboard</h3>
+            <p>
+                Developed interactive Tableau dashboard for KPI
+                tracking and business performance analysis.
+            </p>
+            <a href="https://public.tableau.com/"
+                target="_blank" rel="noopener noreferrer"
+                class="cert-btn">View Dashboard</a>
+        </div>
 
-        <!-- NEW ML PROJECT -->
         <div class="card">
-    <h3>Bank Customer Churn Prediction (Machine Learning)</h3>
-    <p>
-        Built an end-to-end Machine Learning model to predict customer churn 
-        using Python, SQL and Tableau. Implemented Logistic Regression and 
-        Random Forest achieving high prediction accuracy.
-    </p>
+            <h3>Bank Customer Churn Prediction</h3>
+            <p>
+                Built ML model using Logistic Regression & Random Forest
+                to predict churn with Python and SQL integration.
+            </p>
+            <a href="https://github.com/dhiraj879"
+                target="_blank" rel="noopener noreferrer"
+                class="cert-btn">View Code</a>
+        </div>
 
-    <a href="https://github.com/dhiraj879/Bank-Customer-Analysis.git" 
-       target="_blank" class="cert-btn">
-        View Code
-    </a>
+        <div class="card">
+            <h3>Full Stack Web Application (PHP & MySQL)</h3>
+            <p>
+                Developed dynamic web application with authentication,
+                CRUD operations, admin dashboard and responsive UI.
+            </p>
 
-    <a href="https://public.tableau.com/views/bank_customerdhirajkhalas/Bank_CustomerAccountDashbord" 
-       target="_blank" class="cert-btn live-btn">
-        Live Dashboard
-    </a>
-</div>
+            <ul class="project-features">
+                <li>User Registration & Login</li>
+                <li>Admin Panel</li>
+                <li>CRUD Operations</li>
+                <li>Database Integration</li>
+                <li>Responsive Design</li>
+            </ul>
+
+            <a href="https://github.com/dhiraj879/ecommerce-php-mysql"
+                target="_blank" rel="noopener noreferrer"
+                class="cert-btn">View Code</a>
+        </div>
 
     </div>
 </section>
 
-<!-- ===== EDUCATION ===== -->
+<!-- ================= EDUCATION ================= -->
 <section id="education" class="section fade">
     <h2>Education</h2>
-    <div class="cards">
 
+    <div class="cards">
         <div class="card">
             <h3>Data Science Pro Program</h3>
             <p>Fingertips Institute | 2025</p>
@@ -141,41 +175,27 @@
             <h3>Bachelor of Computer Applications (BCA)</h3>
             <p>Silver Oak University | 2021 – 2025</p>
         </div>
-
     </div>
 </section>
 
-<!-- ===== CERTIFICATIONS ===== -->
+<!-- ================= CERTIFICATIONS ================= -->
 <section id="certifications" class="section fade">
-    <h2>Certifications</h2>
+    <h2>Professional Certifications</h2>
 
     <div class="cards">
 
         <div class="card">
-            <h3>Data Science Pro Program</h3>
-            <p>Fingertips Institute | January 2025</p>
-            <p>Python, SQL, Machine Learning, EDA & Tableau</p>
-            <a href="certificate.pdf" target="_blank" class="cert-btn">View Certificate</a>
-        </div>
-
-        <div class="card">
-            <h3>Deloitte – Data Analytics Job Simulation</h3>
-            <p>Completed: November 2025</p>
-            <p>Skills: Data Analysis, Forensic Technology</p>
-            <a href="deloite certificate.pdf" target="_blank" class="cert-btn">View Certificate</a>
-        </div>
-
-        <div class="card">
-            <h3>Tata – Data Visualisation Program</h3>
-            <p>Completed: December 2025</p>
-            <p>Skills: Business Insights, Data Visualisation</p>
-            <a href="tata certificate.pdf" target="_blank" class="cert-btn">View Certificate</a>
+            <h3>Data Science Certification</h3>
+            <p>
+                Certified in Python, SQL, Machine Learning and Data Visualization.
+            </p>
+            <a href="certificate.pdf" class="cert-btn">View Certificate</a>
         </div>
 
     </div>
 </section>
 
-<!-- ===== EXPERIENCE ===== -->
+<!-- ================= EXPERIENCE ================= -->
 <section id="experience" class="section fade">
     <h2>Work Experience</h2>
 
@@ -185,35 +205,29 @@
         <span>Jan 2024 – Jan 2025</span>
 
         <ul>
-            <li>Managed e-commerce order processing and backend operations</li>
-            <li>Maintained sales, inventory, and customer datasets with high accuracy</li>
-            <li>Prepared Excel reports for daily and monthly performance tracking</li>
-            <li>Ensured data consistency and supported business decisions</li>
+            <li>Managed e-commerce backend operations</li>
+            <li>Maintained inventory & sales datasets</li>
+            <li>Prepared Excel reports for performance tracking</li>
+            <li>Supported data-driven decision making</li>
         </ul>
     </div>
 </section>
 
-<!-- ===== CONTACT ===== -->
+<!-- ================= CONTACT ================= -->
 <section id="contact" class="section fade">
     <h2>Contact Me</h2>
 
     <div class="contact-container">
         <form id="contactForm" class="contact-form">
 
-            <div class="input-group">
-                <input type="text" name="user_name" required>
-                <label>Full Name</label>
-            </div>
+            <input type="text" name="user_name"
+                placeholder="Enter your name" required>
 
-            <div class="input-group">
-                <input type="email" name="user_email" required>
-                <label>Email Address</label>
-            </div>
+            <input type="email" name="user_email"
+                placeholder="Enter your email" required>
 
-            <div class="input-group">
-                <textarea name="message" rows="5" required></textarea>
-                <label>Your Message</label>
-            </div>
+            <textarea name="message" rows="5"
+                placeholder="Write your message..." required></textarea>
 
             <button type="submit" class="btn">Send Message</button>
 
@@ -221,35 +235,20 @@
     </div>
 </section>
 
-<!-- ===== FOOTER ===== -->
+<!-- ================= FOOTER ================= -->
 <footer>
-    © 2025 Dhiraj Khalas | Data Analyst Portfolio
+    © 2025 Dhiraj Khalas | Built with ❤️ using HTML, CSS & JavaScript
 </footer>
 
+<!-- ================= SCRIPTS ================= -->
 <script src="script.js"></script>
-</body>
-<script type="text/javascript" src="https://cdn.emailjs.com/dist/email.min.js"></script>
-<script type="text/javascript">
-    (function(){
-        emailjs.init("cyjOk-PcYH9JHDcOK"); // your public key
+
+<script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+<script>
+    (function () {
+        emailjs.init("cyjOk-PcYH9JHDcOK");
     })();
-
-    const form = document.getElementById("contactForm");
-
-    form.addEventListener("submit", function(e){
-        e.preventDefault();
-        const btn = form.querySelector(".btn");
-        btn.textContent = "Sending...";
-
-        emailjs.sendForm('service_cvy2iil', 'template_q4zjssi', this)
-        .then(() => {
-            btn.textContent = "Send Message";
-            alert("Message Sent Successfully 🚀");
-            form.reset();
-        }, (error) => {
-            btn.textContent = "Send Message";
-            alert("Oops! Something went wrong...\n" + JSON.stringify(error));
-        });
-    });
 </script>
+
+</body>
 </html>
