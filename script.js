@@ -1,7 +1,28 @@
 document.addEventListener("DOMContentLoaded", function () {
 
     /* =========================
-       PROFESSIONAL TYPING LOOP
+       MOBILE NAV TOGGLE
+    ========================= */
+    const menuToggle = document.querySelector(".menu-toggle");
+    const navLinksContainer = document.querySelector(".nav-links");
+
+    if (menuToggle && navLinksContainer) {
+        menuToggle.addEventListener("click", () => {
+            navLinksContainer.classList.toggle("active");
+            menuToggle.classList.toggle("open");
+        });
+
+        document.querySelectorAll(".nav-links a").forEach(link => {
+            link.addEventListener("click", () => {
+                navLinksContainer.classList.remove("active");
+                menuToggle.classList.remove("open");
+            });
+        });
+    }
+
+
+    /* =========================
+       PROFESSIONAL TYPING EFFECT
     ========================= */
     const texts = ["Dhiraj Khalas", "Data Analyst", "Web Developer"];
     const typingElement = document.querySelector(".typing");
@@ -9,9 +30,10 @@ document.addEventListener("DOMContentLoaded", function () {
     let textIndex = 0;
     let charIndex = 0;
     let isDeleting = false;
+
     const typingSpeed = 100;
     const deletingSpeed = 60;
-    const delayBetweenTexts = 1200;
+    const delayBetweenTexts = 1500;
 
     function typeEffect() {
         if (!typingElement) return;
@@ -45,17 +67,16 @@ document.addEventListener("DOMContentLoaded", function () {
     typeEffect();
 
 
-
     /* =========================
-       SCROLL FADE (One Time)
+       SCROLL FADE ANIMATION
     ========================= */
     const faders = document.querySelectorAll(".fade");
 
-    const observer = new IntersectionObserver(entries => {
+    const observer = new IntersectionObserver((entries, obs) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
                 entry.target.classList.add("show");
-                observer.unobserve(entry.target);
+                obs.unobserve(entry.target);
             }
         });
     }, { threshold: 0.2 });
@@ -63,47 +84,40 @@ document.addEventListener("DOMContentLoaded", function () {
     faders.forEach(section => observer.observe(section));
 
 
-
     /* =========================
-       NAVBAR SHRINK (CLASS BASED)
+       NAVBAR SHRINK
     ========================= */
     const nav = document.querySelector("nav");
 
-    window.addEventListener("scroll", () => {
+    function handleNavbar() {
         if (!nav) return;
         nav.classList.toggle("shrink", window.scrollY > 50);
-    });
-
+    }
 
 
     /* =========================
-       ACTIVE NAV LINK
+       ACTIVE NAV LINK (Better Logic)
     ========================= */
     const sections = document.querySelectorAll("section");
     const navLinks = document.querySelectorAll("nav a");
 
-    window.addEventListener("scroll", () => {
-
-        let currentSection = "";
+    function updateActiveLink() {
+        let scrollPos = window.scrollY + 150;
 
         sections.forEach(section => {
-            const sectionTop = section.offsetTop - 150;
-            const sectionHeight = section.offsetHeight;
-
-            if (window.scrollY >= sectionTop &&
-                window.scrollY < sectionTop + sectionHeight) {
-                currentSection = section.getAttribute("id");
+            if (
+                scrollPos >= section.offsetTop &&
+                scrollPos < section.offsetTop + section.offsetHeight
+            ) {
+                navLinks.forEach(link => {
+                    link.classList.remove("active");
+                    if (link.getAttribute("href") === "#" + section.id) {
+                        link.classList.add("active");
+                    }
+                });
             }
         });
-
-        navLinks.forEach(link => {
-            link.classList.remove("active");
-            if (link.getAttribute("href") === "#" + currentSection) {
-                link.classList.add("active");
-            }
-        });
-    });
-
+    }
 
 
     /* =========================
@@ -114,11 +128,13 @@ document.addEventListener("DOMContentLoaded", function () {
             e.preventDefault();
             const target = document.querySelector(this.getAttribute("href"));
             if (target) {
-                target.scrollIntoView({ behavior: "smooth" });
+                window.scrollTo({
+                    top: target.offsetTop - 80,
+                    behavior: "smooth"
+                });
             }
         });
     });
-
 
 
     /* =========================
@@ -133,7 +149,7 @@ document.addEventListener("DOMContentLoaded", function () {
             const button = form.querySelector("button");
             button.innerText = "Sending...";
             button.disabled = true;
-            button.style.background = "#555";
+            button.style.opacity = "0.7";
 
             setTimeout(() => {
                 button.innerText = "Message Sent ✓";
@@ -143,6 +159,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 setTimeout(() => {
                     button.innerText = "Send Message";
                     button.disabled = false;
+                    button.style.opacity = "1";
                 }, 2000);
 
             }, 1500);
@@ -150,9 +167,8 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
 
-
     /* =========================
-       SCROLL PROGRESS BAR
+       SCROLL PROGRESS BAR (Smooth)
     ========================= */
     const progressBar = document.createElement("div");
     progressBar.style.position = "fixed";
@@ -161,15 +177,37 @@ document.addEventListener("DOMContentLoaded", function () {
     progressBar.style.height = "3px";
     progressBar.style.background = "#00adb5";
     progressBar.style.zIndex = "2000";
+    progressBar.style.width = "0%";
+    progressBar.style.transition = "width 0.1s ease";
+
     document.body.appendChild(progressBar);
 
-    window.addEventListener("scroll", () => {
-        const scrollTop = document.documentElement.scrollTop;
+    function updateProgressBar() {
+        const scrollTop = window.scrollY;
         const scrollHeight =
             document.documentElement.scrollHeight -
             document.documentElement.clientHeight;
+
         const scrollPercent = (scrollTop / scrollHeight) * 100;
         progressBar.style.width = scrollPercent + "%";
+    }
+
+
+    /* =========================
+       OPTIMIZED SCROLL HANDLER
+    ========================= */
+    let ticking = false;
+
+    window.addEventListener("scroll", () => {
+        if (!ticking) {
+            window.requestAnimationFrame(() => {
+                handleNavbar();
+                updateActiveLink();
+                updateProgressBar();
+                ticking = false;
+            });
+            ticking = true;
+        }
     });
 
 });
